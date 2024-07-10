@@ -4,6 +4,13 @@ import axios from "axios";
 /* assign interface/type to the function definition properly */
 const getUser = async (userId: number) => {
   /* Your code here */
+
+  try{
+  const res = await axios.get(`https://jsonplaceholder.typicode.com/users/${userId}`)
+  return res.data.name;
+  } catch (error) {
+  return "INVALID USER ID";
+  }
 };
 
 //test case
@@ -16,3 +23,6 @@ getUser(input2).then((result) => console.log(result));
 
 // module.exports = getUser;
 export default getUser;
+//รหัส นศ.:660610803
+
+//ชื่อ-สกุล :สุริโย หลุ่มโสม
